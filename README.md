@@ -10,17 +10,15 @@ E - Express
 
 D - Docker
 
-## Why these technologies?
-These technologies were chosen using a few guiding principles.
-
+## Guiding principles
 1. Treating the data center as a single computer is the future.
 2. The same technologies should be useful and scalable from dev environments to small deployments to large deployments.
 3. Small, composable libraries instead of large frameworks. These libraries should be focused and do their respective job well.
 4. Cloud-provider agnostic. I don't want to be tied down to any specific cloud provider.
 
-###With that said, why these specific technologies?
+## Why these technologies?
 ####CockroachDB
-SQL, ACID, and transactions are extremely useful for applications although they have proven difficult to scale. This is the origin of the NoSQL movement. However, ever since Google's Spanner paper it has become apparent that we can have our cake and eat it too. We can have the scalability of NoSQL and the features ofr SQL databases. CockroachDB is currently the most promising application of these ideas that I have seen.
+SQL, ACID, and transactions are extremely useful for applications although they have proven difficult to scale. This is the origin of the NoSQL movement. However, ever since Google's Spanner paper it has become apparent that we can have our cake and eat it too. We can have the scalability of NoSQL and the features of SQL databases. CockroachDB is currently the most promising application of these ideas that I have seen.
 
 ####React
 I really respect the bold departure from the status quo that the facebook team has taken. This has resulted in a small, compact library that avoids the complexity of other front-end frameworks. It also has the added benefit of easy server-side rendering, and support for mobile development through react-native.
