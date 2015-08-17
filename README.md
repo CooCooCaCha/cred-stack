@@ -26,7 +26,7 @@ SQL, ACID, and transactions are extremely useful for applications although they 
 I really respect the bold departure from the status quo that the facebook team has taken. This has resulted in a small, compact library that avoids the complexity of other front-end frameworks. It also has the added benefit of easy server-side rendering, and support for mobile development through react-native.
 
 ####Redux
-A flux framework that radically rethinks the traditional ideas of flux. I love the simplicity of this library.
+A flux framework that radically rethinks the traditional ideas of flux. I love the simplicity of this library. It also incorporates ideas from functional programming which is always a big plus for me :)
 
 ####Express
 Not particularly ground-breaking but still a nice and simple server-side library. It has a huge community and integrates very well with the webpack dev server.
