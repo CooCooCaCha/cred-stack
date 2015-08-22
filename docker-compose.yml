@@ -1,0 +1,32 @@
+web:
+    build: .
+    ports:
+        - "8080:8080"
+        - "3000:3000"
+    net: "host"
+    volumes:
+        - .:/usr/src/app
+    links:
+        - mongo
+        - cockroachdbinit
+        - cockroachdb
+mongo:
+    ports:
+        - "27017:27017"
+    image: mongo:3.1.6
+dbdata:
+    image: busybox
+    volumes:
+        - /data
+cockroachdbinit:
+    image: cockroachdb/cockroach
+    volumes_from: 
+        - dbdata
+    command: init --stores=ssd=/data
+cockroachdb:
+    image: cockroachdb/cockroach
+    ports:
+        - "5432:8080"
+    volumes_from: 
+        - dbdata
+    command: start --insecure --stores=ssd=/data --gossip=self= &
