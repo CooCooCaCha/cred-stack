@@ -31,24 +31,24 @@ mongoose.connection.once('connected', () => {
     console.log("Connected to Database");
 });
 
-/*
-var roachClient = new Roach({
-    uri: 'https://localhost:5432'
-});
-
-roachClient.put("test", "5", (err, res) => {
-    roachClient.get("test", (err, value, res) => {
-        console.log( value );
-    });
-});
-*/
-
 // Express plugins
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Setup routes
-require('./api')(app);
+//require('./api')(app);
+app.get('/api', (req, res) => {
+    var roachClient = new Roach({
+        uri: 'http://localhost:5432',
+        http: require('http')
+    });
+
+    roachClient.put('my_key', '5', (err, res2) => {
+        roachClient.get('my_key', (err, value, res3) => {
+            res.json(parseInt(value,10));
+        });
+    });
+});
 app.use('/assets', proxy(url.parse('http://localhost:3000/assets')));
 app.get('/*', (req, res) => {
     res.sendFile(__dirname + '/index.html');
