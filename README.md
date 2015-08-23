@@ -1,6 +1,8 @@
 # cred-stack
 This will become my own personal web development stack that makes use of technologies that I enjoy and believe in. Many of these technologies are still in their early stages so it may take some time to produce a stack that is production ready.
 
+![Screenshot](https://github.com/CooCooCaCha/cred-stack/)
+
 ## What does it stand for?
 C - CockroachDB
 
