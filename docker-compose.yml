@@ -7,12 +7,7 @@ web:
     volumes:
         - .:/usr/src/app
     links:
-        - mongo
         - cockroachdb
-mongo:
-    ports:
-        - "27017:27017"
-    image: mongo:3.1.6
 cockroachdb:
     build: .
     dockerfile: Dockerfile-cockroach

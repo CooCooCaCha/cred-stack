@@ -1,0 +1,11 @@
+FROM cockroachdb/cockroach
+
+WORKDIR /cockroach
+EXPOSE 8080
+
+ENTRYPOINT ./cockroach cert create-ca && \
+           ./cockroach cert create-node 127.0.0.1 localhost && \
+           ./cockroach cert create-client root && \
+           ./cockroach init --stores=ssd=/data && \
+           ./cockroach start --insecure --stores=ssd=/data --gossip=self= && \ 
+           tail -F /data/$(grep "\d+\.log")
