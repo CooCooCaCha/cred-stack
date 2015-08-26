@@ -53,3 +53,5 @@ The stack is now working with the four main technologies that make up the title 
 ## Future Enhancements
 1. Incorporate Kubernetes. This will allow things like simple, automatic load-balancing of services and help with the problem of service discovery.
 2. Switch from Redux to Relay or Falcor. I love Redux but Relay/Falcor attempts to solve some very difficult probelems that Redux does not address. In the future it would be great to use both together but that isn't really doable at the moment.
+3. Use a docker networking plugin. This should allow easy networking between docker runtimes on different machines.
+4. Use a docker storage plugin. This should help with managing stateful containers such as databases.
