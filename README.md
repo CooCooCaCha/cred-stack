@@ -1,9 +1,9 @@
-# cred-stack
-This will become my own personal web development stack that makes use of technologies that I enjoy and believe in. Many of these technologies are still in their early stages so it may take some time to produce a stack that is production ready.
+# CRED-stack
+This is a forward-thinking web application stack. As such, it uses technologies that are extremely new but also exremely promising. Definitely not production ready yet and still a work in progress.
 
-![Screenshot](https://raw.githubusercontent.com/CooCooCaCha/cred-stack/master/demo.png)
+With that said, these technologies should enable very powerful application scalability all the way from your laptop to a small server cluster and to a large server cluster. This is enabled by using server technologies that are linear and horizontally scalable. This means that you should be able to scale your cluster by just adding cheap servers with commodity hardware and each new server should increase your scalability by the same amount. Theoretically, this allows you to scale your application as long as you have the resources to keep adding new machines.
 
-## What does it stand for?
+## What's in a name?
 C - CockroachDB
 
 R - React/Redux (and eventually Relay!)
@@ -12,11 +12,24 @@ E - Express
 
 D - Docker
 
-## Guiding principles
-1. Treating the data center as a single computer is the future.
-2. The same technologies should be useful and scalable from dev environments to small deployments to large deployments.
-3. Small, composable libraries instead of large frameworks. These libraries should be focused and do their respective job well.
-4. Cloud-provider agnostic. I don't want to be tied down to any specific cloud provider.
+## Getting Started
+After installing you should be able to view a simple todo application on http://localhost:8080
+![Screenshot](https://raw.githubusercontent.com/CooCooCaCha/cred-stack/master/demo.png)
+
+### Installing:
+1. Make sure docker and docker compose are installed. For OSX and Windows users the Docker Toolbox is recommended.
+2. If you are using OSX or Windows you will also need a virtual machine to run Docker. Docker Machine and Vagrant should both work just fine.
+3. Git clone this repository.
+4. From the root directory run `docker-compose up`.
+
+### Developing your application
+The stack uses hot-reloading server-side and client-side to speed up development. This means that if you edit a file the server or client should reload automatically. This is enabled by webpack client-side and piping server-side.
+
+## Goals
+1. Treat server clusters as a single, huge computer and deploy containers.
+2. Provide tools to enable local development and easy deployment to a cluster of almost any size.
+3. Utilize small, simple, and composable libraries instead of monolithic frameworks.
+4. Cloud-provider agnostic. A developer should be able to easily switch to AWS, Google Cloud, DigitalOcean, etc.
 
 ## Why these technologies?
 ####CockroachDB
@@ -29,14 +42,14 @@ I really respect the bold departure from the status quo that the facebook team h
 A flux framework that radically rethinks the traditional ideas of flux. I love the simplicity of this library. It also incorporates ideas from functional programming which is always a big plus for me :)
 
 ####Express
-Not particularly ground-breaking but still a nice and simple server-side library. It has a huge community and integrates very well with the webpack dev server.
+Not particularly new but still a nice and simple server-side library. It has a huge community and integrates very well with the webpack dev server. It is worth looking into Go eventually but Express works well for now.
 
 ####Docker
-This includes Docker-Machine, Docker-Swarm, and Docker-Compose. These tools make it very easy to break your application into small components, develop them, and deploy them easily to a single machine or cluster of machines. Specifically, Docker-Swarm enables you to treat a bunch of servers as a single server. This abstraction is powerful and directly enables my first guiding principle.
+This includes Docker-Machine, Docker-Swarm, and Docker-Compose. These tools make it very easy to break your application into small components, develop them, and deploy them easily to a single machine or cluster of machines. Specifically, Docker-Swarm enables you to treat a bunch of servers as a single server. This abstraction is powerful and directly enables the first goal.
 
 ## Status
-This project is just an idea at this point. I have a personal project that I have been using to test out some of these technologies. I would like to eventually remove the application specific code and move it to this project.
+The stack is now working with the four main technologies that make up the title of this stack. It is still very rough around the edges and needs work on deployment, making it production ready, and switching to CockroachDB's SQL interface instead of the raw key-value interface.
 
 ## Future Enhancements
 1. Incorporate Kubernetes. This will allow things like simple, automatic load-balancing of services and help with the problem of service discovery.
-2. Switch from Redux to Relay. I love Redux but Relay attempts to solve some very difficult probelems that Redux does not address. In the future it would be great to use both together but that isn't really doable at the moment.
+2. Switch from Redux to Relay or Falcor. I love Redux but Relay/Falcor attempts to solve some very difficult probelems that Redux does not address. In the future it would be great to use both together but that isn't really doable at the moment.
