@@ -55,3 +55,4 @@ The stack is now working with the four main technologies that make up the title 
 2. Switch from Redux to Relay or Falcor. I love Redux but Relay/Falcor attempts to solve some very difficult probelems that Redux does not address. In the future it would be great to use both together but that isn't really doable at the moment.
 3. Use a docker networking plugin. This should allow easy networking between docker runtimes on different machines.
 4. Use a docker storage plugin. This should help with managing stateful containers such as databases.
+5. Implement a basic login system using a library such as Passport.
